@@ -13,13 +13,13 @@ import com.sdinfo.smarthome.rest.refrigerator.mapper.*;
 public class RefrigeratorService {
  
     @Autowired
-    RefrigeratorMapper RefrigeratorMapper;
+    RefrigeratorMapper refrigeratorMapper;
     
     public List<RefrigeratorVo> getAll() throws Exception{
     	List<RefrigeratorVo> selectVo = null;
     	
     	try {
-    		selectVo = RefrigeratorMapper.TBL_REFRIGERATOR();
+    		selectVo = refrigeratorMapper.TBL_REFRIGERATOR();
     	}catch (Exception e) {
     		e.printStackTrace();
     	}

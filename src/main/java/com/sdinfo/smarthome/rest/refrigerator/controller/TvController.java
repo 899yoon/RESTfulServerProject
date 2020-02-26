@@ -11,22 +11,23 @@ import com.sdinfo.smarthome.rest.refrigerator.domain.*;
 import com.sdinfo.smarthome.rest.refrigerator.service.*;
 
 @RestController
-@RequestMapping("/smarthome/refrigerator/*")
-public class RefrigeratorController {
+@RequestMapping("/smarthome/tv/*")
+public class TvController {
 	
 	@Autowired
-	RefrigeratorService refrigeratorService; 
+	TvService tvservice; 
 	 
+	/* TBL_TV 테이블 조회 */
 	@RequestMapping(value = "/list", method = {RequestMethod.GET}, produces = "application/json; charset=utf8")
-	public List<RefrigeratorVo> selectQuery() throws Exception {
+	public List<TvVo> selectQueryTv() throws Exception {
 		
-		List<RefrigeratorVo> refrigeratorVo = null;
+		List<TvVo> tvVo = null;
 		
 		try {
-			refrigeratorVo = refrigeratorService.getAll();
+			tvVo = tvservice.getAllTv();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return refrigeratorVo;
+		return tvVo;
 	}
 }
