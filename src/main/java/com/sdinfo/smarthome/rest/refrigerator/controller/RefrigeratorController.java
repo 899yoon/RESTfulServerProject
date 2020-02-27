@@ -1,32 +1,42 @@
 package com.sdinfo.smarthome.rest.refrigerator.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.*;
+import com.sdinfo.smarthome.rest.refrigerator.domain.RefrigeratorVo;
+import com.sdinfo.smarthome.rest.refrigerator.service.RefrigeratorService;
 
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.stereotype.*;
-import org.springframework.web.bind.annotation.*;
-
-import com.sdinfo.smarthome.rest.refrigerator.domain.*;
-import com.sdinfo.smarthome.rest.refrigerator.service.*;
-
-@RestController
+@Controller
 @RequestMapping("/smarthome/refrigerator/*")
 public class RefrigeratorController {
 	
 	@Autowired
-	RefrigeratorService refrigeratorService; 
-	 
-	@RequestMapping(value = "/list", method = {RequestMethod.GET}, produces = "application/json; charset=utf8")
-	public List<RefrigeratorVo> selectQuery() throws Exception {
+	RefrigeratorService refrigeratorService;
+
+	@RequestMapping("/sample")
+	public void sample() throws Exception{
 		
-		List<RefrigeratorVo> refrigeratorVo = null;
+	}
+	
+	@RequestMapping("/insert")
+	public @ResponseBody void insertData(RefrigeratorVo refrigeratorVo) throws Exception {
+		
+		String home_code = "A100000000";
+		String mdate = "2020-02-27 오후5:21:30";
+		
+		refrigeratorVo.setHome_code(home_code);
+		refrigeratorVo.setMdate(mdate);
+		
 		
 		try {
-			refrigeratorVo = refrigeratorService.getAll();
+			refrigeratorService.insertDataRefrigerator(refrigeratorVo);
+			System.out.println("insert controller 실행");
 		} catch (Exception e) {
-			e.printStackTrace();
+			 e.printStackTrace();
 		}
-		return refrigeratorVo;
+		
+
 	}
 }

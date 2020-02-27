@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class RefrigeratorVo {
-	private char home_code;
+	private String home_code;
 	private String mdate;
 	private String product_type;
 	private int model_group;
@@ -42,10 +42,12 @@ public class RefrigeratorVo {
 	private char defrostheater;
 	private String lamp;
 	private int rdate;
-	public char getHome_code() {
+	
+	
+	public String getHome_code() {
 		return home_code;
 	}
-	public void setHome_code(char home_code) {
+	public void setHome_code(String home_code) {
 		this.home_code = home_code;
 	}
 	public String getMdate() {
@@ -235,5 +237,19 @@ public class RefrigeratorVo {
 		this.rdate = rdate;
 	}
 	
-
+	
+	@Override
+	public String toString() {
+		return "RefrigeratorVo [home_code=" + home_code + ", mdate=" + mdate + ", product_type=" + product_type
+				+ ", model_group=" + model_group + ", coolhightemp_ad=" + coolhightemp_ad + ", coollowtemp_ad="
+				+ coollowtemp_ad + ", heatlowtemp_ad=" + heatlowtemp_ad + ", heathightemp_ad=" + heathightemp_ad
+				+ ", roomtemp_ad=" + roomtemp_ad + ", defrosttemp_ad=" + defrosttemp_ad + ", outtemp_ad=" + outtemp_ad
+				+ ", fanoutrpm=" + fanoutrpm + ", fanfeedbackrpm=" + fanfeedbackrpm + ", liter=" + liter + ", humidity="
+				+ humidity + ", roomtemp=" + roomtemp + ", defrosttemp=" + defrosttemp + ", outtemp=" + outtemp
+				+ ", changestep=" + changestep + ", mainmodeindex=" + mainmodeindex + ", submodeindex=" + submodeindex
+				+ ", leakcount=" + leakcount + ", refreshtimer=" + refreshtimer + ", errorcode=" + errorcode
+				+ ", motionsensor=" + motionsensor + ", dooropen=" + dooropen + ", power=" + power + ", comp=" + comp
+				+ ", drainheater=" + drainheater + ", defrostheater=" + defrostheater + ", lamp=" + lamp + ", rdate="
+				+ rdate + "]";
+	}
 }

@@ -15,15 +15,25 @@ public class RefrigeratorService {
     @Autowired
     RefrigeratorMapper refrigeratorMapper;
     
-    public List<RefrigeratorVo> getAll() throws Exception{
+    public List<RefrigeratorVo> getAllRefrigerator() throws Exception{
     	List<RefrigeratorVo> selectVo = null;
     	
     	try {
-    		selectVo = refrigeratorMapper.TBL_REFRIGERATOR();
+    		selectVo = refrigeratorMapper.getAllRefrigerator();
     	}catch (Exception e) {
     		e.printStackTrace();
     	}
         return selectVo;
     }
+    
+    public void insertDataRefrigerator(RefrigeratorVo refrigeratorVo) throws Exception {
+		
+		try {
+			refrigeratorMapper.insertDataRefrigerator(refrigeratorVo);
+			System.out.println("insert service 실행");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
 
