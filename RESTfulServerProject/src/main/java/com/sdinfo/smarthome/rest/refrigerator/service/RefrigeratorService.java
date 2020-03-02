@@ -27,7 +27,7 @@ public class RefrigeratorService {
 		return refrigeratorVo;
 	}
 	
-	/* TBL_REFRIGERATOR INSERT */  
+	/* TBL_REFRIGERATOR INSERT */
 	public RefrigeratorVo insertDataRefrigerator(RefrigeratorVo refrigeratorVo) throws Exception {
 		
 		try {
