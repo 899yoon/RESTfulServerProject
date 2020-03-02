@@ -14,6 +14,7 @@ public class RefrigeratorService {
 	@Autowired
 	RefrigeratorMapper refrigeratorMapper;
 	
+	/*TBL_REFRIGERATOR SELECT */
 	public List<RefrigeratorVo> getAllRefrigerator() throws Exception {
 		
 		List<RefrigeratorVo> refrigeratorVo = null;
@@ -26,6 +27,7 @@ public class RefrigeratorService {
 		return refrigeratorVo;
 	}
 	
+	/* TBL_REFRIGERATOR INSERT */
 	public RefrigeratorVo insertDataRefrigerator(RefrigeratorVo refrigeratorVo) throws Exception {
 		
 		try {
